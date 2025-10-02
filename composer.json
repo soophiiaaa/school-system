@@ -1,0 +1,23 @@
+{
+    "name": "soophiiaaa/object-calisthenics",
+    "description": "Project to train Object Calisthenics in PHP.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sophia\\Calisthenics\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sophia Lacerda",
+            "email": "sbuarquemagalhaes@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-ds": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.3"
+    }
+}

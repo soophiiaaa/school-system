@@ -1,0 +1,5 @@
+# Dependências do repositório
+/vendor/
+
+# Regras
+regras.txt
