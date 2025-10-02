@@ -14,10 +14,10 @@ Follow these steps to set up the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/soophiiaaa/projeto.git
+git clone https://github.com/soophiiaaa/school-system.git
 
 # Navigate to the project folder
-cd projeto
+cd school-system
 
 # Install dependencies
 composer install
