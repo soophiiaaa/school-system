@@ -19,11 +19,11 @@ class InMemoryVideoRepositoryTest extends TestCase
             $repository->add($video);
         }
 
-        $student = $this>createStub();
-        $student->method('getBd')->willReturn;
+        $student = $this->createStub(Student::class);
+        $student->method('getBd')->willReturn(19);
 
-        $videoList = $repository->videosFor();
+        $videoList = $repository->videosFor($student);
 
-        self::assertCount(3);
+        self::assertCount(3, $videoList);
     }
 }
