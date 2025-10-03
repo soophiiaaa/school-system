@@ -3,6 +3,8 @@
 namespace Sophia\Calisthenics\Tests\Unit\Domain\Student;
 
 use Sophia\Calisthenics\Domain\Student\Student;
+use Sophia\Calisthenics\Domain\Student\FullName;
+use Sophia\Calisthenics\Domain\Email\Email;
 use Sophia\Calisthenics\Domain\Video\Video;
 use PhpUnit\Framework\TestCase;
 
@@ -13,10 +15,9 @@ class StudentTest extends TestCase
     protected function setUp(): void
     {
         $this->student = new Student(
-            'email@example.com',
+            new Email('email@example.com'),
             new \DateTimeImmutable('2007-05-11'),
-            'Sophia',
-            'Lacerda',
+            new FullName('Sophia','Lacerda'),
             'Rua de Exemplo',
             '2',
             'Meu Bairro',
@@ -24,6 +25,11 @@ class StudentTest extends TestCase
             'Meu Estado',
             'Brasil'
         );
+    }
+
+    public function testFullNameMustBeRepresentedAsString()
+    {
+        self::assertEquals('Sophia Lacerda', $this->student->fullName());
     }
 
     public function testStudentWithoutWatchedVideoHasAcess()

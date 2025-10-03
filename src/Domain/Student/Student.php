@@ -4,6 +4,7 @@ namespace Sophia\Calisthenics\Domain\Student;
 
 use Sophia\Calisthenics\Domain\Email\Email;
 use Sophia\Calisthenics\Domain\Video\Video;
+use Sophia\Calisthenics\Domain\Student\FullName;
 use DateTimeInterface;
 
 class Student
@@ -11,8 +12,7 @@ class Student
     private Email $email;
     private DateTimeInterface $birthDate;
     private WatchedVideos $watchedVideos;
-    private string $firstName;
-    private string $lastName;
+    private FullName $fullName;
     public string $street;
     public string $number;
     public string $province;
@@ -23,8 +23,7 @@ class Student
     public function __construct(
         Email $email,
         DateTimeInterface $birthDate,
-        string $firstName,
-        string $lastName,
+        FullName $fullName,
         string $street,
         string $number,
         string $province,
@@ -35,8 +34,7 @@ class Student
         $this->watchedVideos = new WatchedVideos();
         $this->email = $email;
         $this->birthDate = $birthDate;
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
+        $this->fullName = $fullName;
         $this->street = $street;
         $this->number = $number;
         $this->province = $province;
@@ -47,7 +45,7 @@ class Student
 
     public function fullName(): string
     {
-        return "{$this->firstName} {$this->lastName}";
+        return "{$this->fullName}";
     }
 
     public function email(): string
