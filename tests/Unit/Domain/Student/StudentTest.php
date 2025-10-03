@@ -3,8 +3,9 @@
 namespace Sophia\Calisthenics\Tests\Unit\Domain\Student;
 
 use Sophia\Calisthenics\Domain\Student\Student;
-use Sophia\Calisthenics\Domain\Student\FullName;
+use Sophia\Calisthenics\Domain\Adress\Adress;
 use Sophia\Calisthenics\Domain\Email\Email;
+use Sophia\Calisthenics\Domain\Student\FullName;
 use Sophia\Calisthenics\Domain\Video\Video;
 use PhpUnit\Framework\TestCase;
 
@@ -18,12 +19,12 @@ class StudentTest extends TestCase
             new Email('email@example.com'),
             new \DateTimeImmutable('2007-05-11'),
             new FullName('Sophia','Lacerda'),
-            'Rua de Exemplo',
-            '2',
+            new Adress('Rua de Exemplo',
+            '2', 
             'Meu Bairro',
             'Minha Cidade',
             'Meu Estado',
-            'Brasil'
+            'Brasil')
         );
     }
 
